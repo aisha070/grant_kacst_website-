@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مبادرة تعريف برامج الدعم والحوافز — KACST</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     HEADER
+     ═══════════════════════════════════════════════════════════ -->
+<div class="header">
+  <div class="kacst-logo-wrap">
+    <img id="kacst-logo"
+      src="kacst-logo.svg"
+      alt="KACST"
+      style="height:56px;width:56px;object-fit:contain;flex-shrink:0;filter:brightness(0) invert(1);"
+    />
+    <div class="kacst-wordmark">
+      <div class="kacst-name-ar">مدينة الملك عبدالعزيز للعلوم والتقنية</div>
+      <div class="kacst-name-en">King Abdulaziz City for Science and Technology</div>
+    </div>
+  </div>
+  <div class="hdiv"></div>
+  <div class="htitles">
+    <div class="h-initiative" id="h-initiative">مبادرة تعريف برامج الدعم والحوافز المالية لرواد الأعمال</div>
+    <div class="h-dept" id="h-dept">الإدارة العامة لتمويل الابتكار ·
+      <a href="mailto:vfund@kacst.gov.sa"
+         style="color:rgba(255,255,255,0.6);text-decoration:none;">vfund@kacst.gov.sa</a>
+    </div>
+    <div class="h-meta" id="h-meta">آخر تحديث: جارٍ التحميل…</div>
+  </div>
+  <button class="btn-update" id="btn-update" onclick="refreshAll()">
+    <span id="btn-icon">↻</span>
+    <span id="btn-text">تحديث البيانات</span>
+  </button>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     MAIN
+     ═══════════════════════════════════════════════════════════ -->
+<div class="main">
+
+  <!-- TOP STATS ROW (from stats sheet) -->
+  <div class="kpis-row">
+    <div class="kpi-item"><div class="n" id="stat-n1">22</div><div class="l" id="stat-l1">جهة داعمة</div></div>
+    <div class="ksep"></div>
+    <div class="kpi-item"><div class="n" id="stat-n2">80+</div><div class="l" id="stat-l2">برنامج ومبادرة</div></div>
+    <div class="ksep"></div>
+    <div class="kpi-item"><div class="n" id="stat-n3">3M</div><div class="l" id="stat-l3">تمويل حكومي يصل الى</div></div>
+    <div class="ksep"></div>
+    <div class="kpi-item"><div class="n" id="stat-n4">150K</div><div class="l" id="stat-l4">تمويل خاص يصل الى</div></div>
+  </div>
+
+  <!-- STATUS BAR -->
+  <div class="status-bar">
+    <div class="status-dot" id="status-dot"></div>
+    <span id="status-msg">جارٍ تحميل البيانات من Google Sheets…</span>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs-bar">
+    <button class="tab-btn active" id="tab-btn-about"    onclick="switchTab('about')">حول</button>
+    <button class="tab-btn"        id="tab-btn-programs" onclick="switchTab('programs')">البرامج</button>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       TAB 1: حول
+       ══════════════════════════════════════ -->
+  <div class="tab-panel active" id="tab-about">
+
+    <!-- نبذة -->
+    <div class="sec-hdr"><div class="bar blue"></div><h2>نبذة عن المبادرة</h2></div>
+    <div class="nabtha-box" id="nabtha-box">
+      <p>تُعنى هذه المبادرة بحصر وتعريف برامج الدعم والحوافز المالية المتاحة لرواد الأعمال
+         والشركات الناشئة في المملكة العربية السعودية، وتيسير وصولهم إلى هذه الفرص من خلال
+         دليل شامل وموحّد.</p>
+    </div>
+
+    <!-- أهداف المبادرة -->
+    <div class="sec-hdr"><div class="bar blue"></div><h2>أهداف المبادرة</h2></div>
+    <div class="objectives-grid" id="objectives-grid">
+      <div class="obj-card"><div class="obj-num c1">1</div><div class="obj-text">توفير قاعدة بيانات شاملة عن الجهات الداعمة للباحثين عن فرص الدعم</div></div>
+      <div class="obj-card"><div class="obj-num c2">2</div><div class="obj-text">رفع الوعي بفرص الدعم المتاحة لرواد الأعمال والشركات الناشئة</div></div>
+      <div class="obj-card"><div class="obj-num c3">3</div><div class="obj-text">توجيه رواد الأعمال نحو المسارات والبرامج المناسبة لمراحل مشاريعهم</div></div>
+      <div class="obj-card"><div class="obj-num c4">4</div><div class="obj-text">تمكين المبتكرين من الوصول الفعّال إلى مصادر التمويل والدعم</div></div>
+      <div class="obj-card"><div class="obj-num c5">5</div><div class="obj-text">تحقيق نمو مستدام وقابل للتوسع للشركات الناشئة السعودية</div></div>
+      <div class="obj-card"><div class="obj-num c6">6</div><div class="obj-text">رفع فرص نجاح الشركات الناشئة وزيادة حصولها على القبول بالبرامج</div></div>
+    </div>
+
+    <!-- مؤشرات الأداء (3 فقط، جنباً إلى جنب) -->
+    <div class="sec-hdr"><div class="bar green"></div><h2>مؤشرات الأداء</h2></div>
+    <div class="kpi-indicators" id="kpi-indicators">
+      <div class="kpi-card">
+        <div class="kpi-badge b1">01</div>
+        <div class="kpi-lbl">حصر وتعريف برامج الحوافز والمنح الوطنية الحكومية والخاصة</div>
+        <div class="kpi-vals">
+          <div class="val-box current"><div class="vn">82</div><div class="vl">الحالي</div></div>
+          <div class="val-box target-b1"><div class="vn">90</div><div class="vl">المستهدف</div></div>
+        </div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-badge b2">02</div>
+        <div class="kpi-lbl">تسهيل تقديم الشركات الناشئة للحصول على الحوافز والمنح</div>
+        <div class="kpi-vals">
+          <div class="val-box current"><div class="vn">4</div><div class="vl">الحالي</div></div>
+          <div class="val-box target-b2"><div class="vn">25</div><div class="vl">المستهدف</div></div>
+        </div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-badge b3">03</div>
+        <div class="kpi-lbl">إقامة تعاون فعّال مع الجهات المقدِّمة لبرامج الحوافز والمنح</div>
+        <div class="kpi-vals">
+          <div class="val-box current"><div class="vn">5</div><div class="vl">الحالي</div></div>
+          <div class="val-box target-b3"><div class="vn">15</div><div class="vl">المستهدف</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /tab-about -->
+
+  <!-- ══════════════════════════════════════
+       TAB 2: البرامج
+       ══════════════════════════════════════ -->
+  <div class="tab-panel" id="tab-programs">
+
+    <div class="sec-hdr"><div class="bar amber"></div><h2>الجهات الداعمة</h2></div>
+    <div class="entities-grid">
+
+      <div class="entity-card gov-style" id="gov-card" onclick="toggleGov(this)">
+        <div class="stripe"></div>
+        <div class="e-type">حكومية</div>
+        <div class="e-name">الجهات الحكومية</div>
+        <span class="e-badge" id="gov-badge">9 جهات</span>
+        <span class="e-arrow">←</span>
+      </div>
+
+      <div class="entity-card uni-style" onclick="selectCat('universities','الجامعات',this)">
+        <div class="stripe"></div>
+        <div class="e-type">أكاديمية</div>
+        <div class="e-name">الجامعات</div>
+        <span class="e-badge" id="badge-universities">6 برامج</span>
+        <span class="e-arrow">←</span>
+      </div>
+
+      <div class="entity-card np-style" onclick="selectCat('nonprofit','المؤسسات غير الربحية',this)">
+        <div class="stripe"></div>
+        <div class="e-type">مجتمعية</div>
+        <div class="e-name">المؤسسات غير الربحية</div>
+        <span class="e-badge" id="badge-nonprofit">4 برامج</span>
+        <span class="e-arrow">←</span>
+      </div>
+
+      <!-- GOV SUB-PANEL -->
+      <div class="gov-sub" id="gov-sub">
+        <div class="gov-sub-lbl">اختر الجهة الحكومية</div>
+        <div class="gov-sub-grid">
+          <button class="sub-btn" onclick="selectGov('ntdp','NTDP',this)"><span class="sb-name">NTDP</span><span class="sb-sub">البرنامج الوطني لتنمية التقنية</span></button>
+          <button class="sub-btn" onclick="selectGov('industry','وزارة الصناعة',this)"><span class="sb-name">وزارة الصناعة</span><span class="sb-sub">وزارة الصناعة والثروة المعدنية</span></button>
+          <button class="sub-btn" onclick="selectGov('smebank','بنك المنشآت',this)"><span class="sb-name">بنك المنشآت</span><span class="sb-sub">بنك المنشآت الصغيرة والمتوسطة</span></button>
+          <button class="sub-btn" onclick="selectGov('municipalities','وزارة البلديات',this)"><span class="sb-name">وزارة البلديات</span><span class="sb-sub">وزارة البلديات والإسكان</span></button>
+          <button class="sub-btn" onclick="selectGov('modon','مدن',this)"><span class="sb-name">مدن</span><span class="sb-sub">الهيئة السعودية للمدن الصناعية</span></button>
+          <button class="sub-btn" onclick="selectGov('monshaat','منشآت',this)"><span class="sb-name">منشآت</span><span class="sb-sub">الهيئة العامة للمنشآت الصغيرة</span></button>
+          <button class="sub-btn" onclick="selectGov('exports','هيئة الصادرات',this)"><span class="sb-name">هيئة الصادرات</span><span class="sb-sub">هيئة تنمية الصادرات السعودية</span></button>
+          <button class="sub-btn" onclick="selectGov('tourism','صندوق السياحة',this)"><span class="sb-name">صندوق السياحة</span><span class="sb-sub">صندوق التنمية السياحي</span></button>
+          <button class="sub-btn" onclick="selectGov('sdb','بنك التنمية الاجتماعي',this)"><span class="sb-name">بنك التنمية الاجتماعي</span><span class="sb-sub">SDB</span></button>
+        </div>
+      </div>
+
+      <div class="entity-card prv-style" onclick="selectCat('private','القطاع الخاص',this)">
+        <div class="stripe"></div>
+        <div class="e-type">خاص</div>
+        <div class="e-name">القطاع الخاص</div>
+        <span class="e-badge" id="badge-private">11 برنامج</span>
+        <span class="e-arrow">←</span>
+      </div>
+
+      <div class="entity-card hlth-style" onclick="selectCat('health','القطاع الصحي',this)">
+        <div class="stripe"></div>
+        <div class="e-type">صحي</div>
+        <div class="e-name">القطاع الصحي</div>
+        <span class="e-badge" id="badge-health">6 برامج</span>
+        <span class="e-arrow">←</span>
+      </div>
+
+      <div class="entity-card glb-style" onclick="selectCat('global','البرامج العالمية',this)">
+        <div class="stripe"></div>
+        <div class="e-type">دولي</div>
+        <div class="e-name">البرامج العالمية</div>
+        <span class="e-badge" id="badge-global">6 برامج</span>
+        <span class="e-arrow">←</span>
+      </div>
+
+    </div><!-- /entities-grid -->
+
+    <!-- PROGRAMS OUTPUT -->
+    <div class="prog-wrap" id="prog-wrap">
+      <div class="prog-hdr">
+        <div class="prog-hdr-title" id="prog-title"></div>
+        <div class="prog-hdr-count" id="prog-count"></div>
+      </div>
+      <div class="det" id="det">
+        <div class="det-title">
+          <span id="d-name"></span>
+          <a class="det-link" id="d-link" href="#" target="_blank" rel="noopener">زيارة الموقع ↗</a>
+        </div>
+        <div class="dgrid">
+          <div class="di"><label>الجهة</label><p id="d-src"></p></div>
+          <div class="di"><label>الفئة المستهدفة</label><p id="d-tgt"></p></div>
+          <div class="di"><label>الدعم المالي</label><p id="d-fin"></p></div>
+          <div class="di"><label>الخدمات المقدمة</label><p id="d-svc"></p></div>
+        </div>
+        <button class="cbtn" onclick="closeDet()">إغلاق</button>
+      </div>
+      <div class="pgrid" id="progs"></div>
+    </div>
+
+  </div><!-- /tab-programs -->
+
+</div><!-- /main -->
+
+<!-- Load config first, then app logic -->
+<script src="config.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
