@@ -91,22 +91,14 @@
     </div>
 
     <!-- مؤشرات الأداء (3 فقط، جنباً إلى جنب) -->
-  <script>
-async function loadKPIs() {
-  const res = await fetch("PUT_YOUR_API_LINK_HERE");
-  const data = await res.json();
+<div class="vn" id="kpi1-current">82</div>
+<div class="vn" id="kpi1-target">90</div>
 
-  // مثال: نفترض ترتيب البيانات في الشيت
-  document.getElementById("kpi1-current").textContent = data[0].current;
-  document.getElementById("kpi1-target").textContent = data[0].target;
+<div class="vn" id="kpi2-current">4</div>
+<div class="vn" id="kpi2-target">25</div>
 
-  document.getElementById("kpi2-current").textContent = data[1].current;
-  document.getElementById("kpi2-target").textContent = data[1].target;
-
-  document.getElementById("kpi3-current").textContent = data[2].current;
-  document.getElementById("kpi3-target").textContent = data[2].target;
-}
-
+<div class="vn" id="kpi3-current">5</div>
+<div class="vn" id="kpi3-target">15</div>
 loadKPIs();
 </script>
 
